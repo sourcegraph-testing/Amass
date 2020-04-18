@@ -32,7 +32,7 @@ var _ = func() error {
 		b.SetResolver("namelist.txt", packr.Pointer{ForwardBox: gk, ForwardPath: "04a31e77c9b5e3246331c5338ed1bbad"})
 		b.SetResolver("tldlist.txt", packr.Pointer{ForwardBox: gk, ForwardPath: "cadf73cd9544b1e379dfe7dcabd71761"})
 		b.SetResolver("user_agents.txt", packr.Pointer{ForwardBox: gk, ForwardPath: "0d93844bd651dd9da905c6abdabc1267"})
-		}()
+	}()
 
 	return nil
 }()
