@@ -11,7 +11,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"net"
 	"net/http"
 	"net/http/cookiejar"
@@ -116,7 +115,7 @@ func RequestWebPage(urlstring string, body io.Reader, hvals map[string]string, u
 		return "", errors.New(resp.Status)
 	}
 
-	in, err := ioutil.ReadAll(resp.Body)
+	in, err := io.ReadAll(resp.Body)
 	resp.Body.Close()
 	return string(in), nil
 }
