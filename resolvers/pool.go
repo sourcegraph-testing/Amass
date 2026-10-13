@@ -7,7 +7,7 @@ import (
 	"context"
 	"encoding/hex"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"math/rand"
 	"net"
@@ -120,7 +120,7 @@ func NewResolverPool(res []Resolver, logger *log.Logger) *ResolverPool {
 
 	// Assign a null logger when one is not provided
 	if rp.Log == nil {
-		rp.Log = log.New(ioutil.Discard, "", 0)
+		rp.Log = log.New(io.Discard, "", 0)
 	}
 
 	rp.SanityChecks()
