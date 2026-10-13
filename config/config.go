@@ -8,7 +8,6 @@ import (
 	"errors"
 	"fmt"
 	"io"
-	"io/ioutil"
 	"log"
 	"net"
 	"regexp"
@@ -187,7 +186,7 @@ type APIKey struct {
 func NewConfig() *Config {
 	c := &Config{
 		UUID:          uuid.New(),
-		Log:           log.New(ioutil.Discard, "", 0),
+		Log:           log.New(io.Discard, "", 0),
 		Ports:         []int{443},
 		MaxDNSQueries: defaultConcurrentDNSQueries,
 
