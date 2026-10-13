@@ -6,7 +6,7 @@ package services
 import (
 	"context"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net"
 	"net/http"
 	"net/url"
@@ -150,7 +150,7 @@ func (d *DNSDumpster) postForm(ctx context.Context, token, domain string) (strin
 		return "", err
 	}
 	// Now, grab the entire page
-	in, err := ioutil.ReadAll(resp.Body)
+	in, err := io.ReadAll(resp.Body)
 	resp.Body.Close()
 	return string(in), nil
 }
